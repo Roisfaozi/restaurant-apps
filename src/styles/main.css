@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -222,6 +223,10 @@ main {
 .resto-content {
     margin: 20px;
 }
+.resto-content a {
+        text-decoration: none;
+
+}
 
 .resto-name {
     font-size: 24px;
@@ -251,6 +256,46 @@ main {
     opacity: 0.7;
     margin-bottom: 11px;
     color: #1c2237;
+}
+
+.restaurant {
+    margin: 30px auto;
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px 16px;
+}
+
+.restaurant .restaurant-title {
+    margin-top: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.restaurant .restaurant-poster {
+    width: 100%;
+    max-width: 400px;
+}
+
+.restaurant .restaurant-desc {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.restaurant .restaurant-desc p {
+    margin-bottom: 10px;
+}
+.restaurant .restaurant-desc h3 {
+    margin: 15px 0;
+}
+
+.restaurant .restaurant-desc .reviews {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    gap: 16px;
+    margin: 32px 0;
 }
 
 /* Footer */

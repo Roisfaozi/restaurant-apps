@@ -44,24 +44,6 @@ window.addEventListener('load', () => {
 //     console.log(data)
 //     data.restaurants.forEach(resto => {
 //       restoList.innerHTML += `
-//             <div class="resto-card" id="${resto.id}">
-//                         <div class="resto-image" tabIndex="0">
-//                             <img src="${resto.pictureId}" alt="${resto.name}">
-//                         </div>
-
-//                                 <div class="resto-content">
-//                             <p tabindex="0" class="resto-name">${resto.name}</p>
-//                             <p tabindex="0" class="resto-city">${resto.city}</p>
-//                             <p tabindex="0" class="resto-description">${
-//                               resto.description.slice(0, 200) + ' ...'
-//                             }
-//                             </p>
-//                             <p tabindex="0" class="resto-rating">${
-//                               resto.rating
-//                             }</p>
-//                         </div>
-
-//                     </div>
 //             `
 //     })
 //   }
