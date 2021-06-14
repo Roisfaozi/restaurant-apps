@@ -1,26 +1,22 @@
 const createRestaurantDetailTemplate = (resto) => `
-<h2 tabindex="0" class="restaurant-title">${resto.name}</h2>
+<h2 tabindex="0" class="restaurant-title">${resto.name} <span>/ ⭐️${resto.rating}</span></h2>
 <img class="restaurant-poster" src="https://restaurant-api.dicoding.dev/images/medium/${resto.pictureId}" alt="${resto.name}" />
-<div class="restaurant-info">
-<h3>Information</h3>
-  <h4>Kota</h4>
-  <p tabindex="0" >${resto.city}</p>
-  <h4>Alamat</h4>
-  <p tabindex="0">${resto.address}</p>
-  <h4>Rating</h4>
-  <p tabindex="0">${resto.rating}</p>
-</div>
+
+
+  <h3>Alamat</h3>
+  <p>${resto.address} ${resto.city}</p>
+
 <div class="restaurant-desc">
   <h3 tabindex="0" >Description</h3>
   <p tabindex="0" >${resto.description}</p>
-  <p tabindex="0" class="menu-category">Menu Category : ${resto.categories.map((category) => category.name)}</p>
-  <p tabindex="0" class="foods-menu">Foods Menu : ${resto.menus.foods.map((food) => food.name)}</p>
-  <p tabindex="0" class="drinks-menu">Drinks Menu : ${resto.menus.drinks.map((drink) => drink.name)}</p>
+  <p tabindex="0" class="menu-category"><span>Menu Category :</span> ${resto.categories.map((category) => category.name)}</p>
+  <p tabindex="0" class="foods-menu"><span>Foods Menu :</span> ${resto.menus.foods.map((food) => food.name)}</p>
+  <p tabindex="0" class="drinks-menu"><span>Drinks Menu :</span> ${resto.menus.drinks.map((drink) => drink.name)}</p>
   <h3 tabindex="0" >Reviews</h3>
   <div id="reviews" class="reviews">
     ${resto.customerReviews.map((customerReview) => `
       <div class="review">
-        <p tabindex="0" class="review-name">${customerReview.name}</p>
+        <p tabindex="0" class="review-name"><span>${customerReview.name}</span></p>
         <p tabindex="0" class="review-content">${customerReview.review}</p>
         <p tabindex="0" class="review-date">${customerReview.date}</p>
       </div>

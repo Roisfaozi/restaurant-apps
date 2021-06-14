@@ -144,7 +144,7 @@ img {
 .text-header h1 {
     font-size: 6vw;
     padding: 0;
-    margin-top: 11vh;
+    margin-top: auto;
     margin-left: auto;
     margin-right: auto;
     color: rgb(26, 26, 43);
@@ -260,42 +260,50 @@ main {
 
 .restaurant {
     margin: 30px auto;
-    width: 100%;
     max-width: 800px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 18px 16px;
 }
 
 .restaurant .restaurant-title {
-    margin-top: 10px;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    margin: 10px 0;
+}
+
+.restaurant .restaurant-title span {
+    font-weight: normal;
+    color: rgb(211, 206, 165);
+    font-size: 15pt;
 }
 
 .restaurant .restaurant-poster {
     width: 100%;
-    max-width: 400px;
 }
 
-.restaurant .restaurant-desc {
-    grid-column-start: 1;
-    grid-column-end: 3;
+.restaurant h3 {
+    margin: 15px 0;
 }
 
 .restaurant .restaurant-desc p {
     margin-bottom: 10px;
 }
-.restaurant .restaurant-desc h3 {
-    margin: 15px 0;
+
+.restaurant .restaurant-desc p span {
+    font-weight: bold;
 }
+
 
 .restaurant .restaurant-desc .reviews {
     display: grid;
-    grid-column-start: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 2;
     grid-column-end: 3;
     gap: 16px;
     margin: 32px 0;
+}
+
+.review {
+    padding: 8px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    transition: 0.3s;
+    border-radius: 5px;
 }
 
 /* Footer */

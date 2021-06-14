@@ -81,6 +81,10 @@
         margin-bottom: 12px;
     }
 
+    .restaurant {
+    margin: 30px;
+}
+
     footer p {
         font-size: 16px;
     }
@@ -174,4 +178,11 @@
         column-gap: 50px;
         row-gap: 50px;
     }
+
+    .restaurant {
+    margin: 30px;
+    width: 100%;
+    max-width: 800px;
+    }
+
 }
