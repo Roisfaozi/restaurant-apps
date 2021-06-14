@@ -1,13 +1,25 @@
+import FavoriteRestoIdb from '../../data/favoriteRestaurantDb'
+import { createRestaurantItemTemplate } from '../templates/template-creator'
 const Favorite = {
   async render () {
     return `
-      <h2>Favorite Pages</h2>
+      <div class="resto-container">
+        <h2 class="resto-list-header">Favorite Restuarant</h2>
+        <div class="resto-list">
+          <!-- Resto List Here -->
+        </div>
+      </div>
     `
   },
 
   async afterRender () {
-    // Fungsi ini akan dipanggil setelah render()
+    const restourants = await FavoriteRestoIdb.getAllRestos()
+    const restourantsContainer = document.querySelector('.resto-list')
+    restourants.forEach((resto) => {
+      restourantsContainer.innerHTML += createRestaurantItemTemplate(resto)
+    })
   }
+
 }
 
 export default Favorite
