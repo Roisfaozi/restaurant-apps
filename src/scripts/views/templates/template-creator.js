@@ -1,6 +1,8 @@
+import CONFIG from '../../globals/config'
+
 const createRestaurantDetailTemplate = (resto) => `
 <h2 tabindex="0" class="restaurant-title">${resto.name} <span>/ ⭐️${resto.rating}</span></h2>
-<img class="restaurant-poster" src="https://restaurant-api.dicoding.dev/images/medium/${resto.pictureId}" alt="${resto.name}" />
+<img class="restaurant-poster" src="${CONFIG.BASE_IMAGE_URL}medium/${resto.pictureId}" alt="${resto.name}" />
 
 
   <h3>Alamat</h3>
@@ -28,7 +30,7 @@ const createRestaurantDetailTemplate = (resto) => `
 const createRestaurantItemTemplate = (resto) => `
   <div class="resto-card" id="${resto.id}">
     <div class="resto-image" tabIndex="0">
-      <img src="https://restaurant-api.dicoding.dev/images/small/${resto.pictureId}" alt="${resto.name}">
+      <img src="${CONFIG.BASE_IMAGE_URL}small/${resto.pictureId}" alt="${resto.name}">
     </div>
 
     <div class="resto-content">
