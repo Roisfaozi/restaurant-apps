@@ -85,6 +85,15 @@
     margin: 30px;
 }
 
+.restaurant .restaurant-desc .reviews {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    gap: 16px;
+    margin: 32px 0;
+    }
+
     footer p {
         font-size: 16px;
     }
@@ -181,8 +190,15 @@
 
     .restaurant {
     margin: 30px;
-    width: 100%;
-    max-width: 800px;
+    }
+
+    .restaurant .restaurant-desc .reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    gap: 16px;
+    margin: 32px 0;
     }
 
 }

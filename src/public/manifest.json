@@ -4,8 +4,10 @@
   "description": "Find your favorite resto",
   "start_url": "/index.html",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#ffffff",
   "theme_color": "#1c2237",
+  "scope": ".",
   "icons": [
     {
       "src": "/images/favicon/favicon-72x72.png",
