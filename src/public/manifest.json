@@ -34,8 +34,8 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/images/favicon/favicon152x152.png",
-      "sizes": "152x152",
+      "src": "/images/favicon/favicon512x512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
