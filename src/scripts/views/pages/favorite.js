@@ -1,3 +1,4 @@
+
 import FavoriteRestoIdb from '../../data/favoriteRestaurantDb'
 import { createRestaurantItemTemplate } from '../templates/template-creator'
 const Favorite = {
