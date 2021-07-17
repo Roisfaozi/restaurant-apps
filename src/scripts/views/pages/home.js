@@ -1,5 +1,5 @@
-import RestaurantDbSource from '../../data/restourantdb-source'
-import { createRestaurantItemTemplate } from '../templates/template-creator'
+import RestaurantDbSource from '../../data/restourantdb-source';
+import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const Home = {
   async render () {

@@ -9,33 +9,33 @@ const FavoriteRestaurantArray = {
       return;
     }
 
-    return favoriteRestaurants.find((restaurant) => restaurant.id === id);
+    return favoriteRestaurants.find((resto) => resto.id === id);
   },
 
   getAllRestos() {
     return favoriteRestaurants;
   },
 
-  putResto(restaurant) {
-    if (!restaurant.hasOwnProperty('id')) {
+  putResto(resto) {
+    if (!resto.hasOwnProperty('id')) {
       return;
     }
 
-    if (this.getResto(restaurant.id)) {
+    if (this.getResto(resto.id)) {
       return;
     }
 
-    favoriteRestaurants.push(restaurant);
+    favoriteRestaurants.push(resto);
   },
 
   deleteResto(id) {
-    favoriteRestaurants = favoriteRestaurants.filter((restaurant) => restaurant.id !== id);
+    favoriteRestaurants = favoriteRestaurants.filter((resto) => resto.id !== id);
   },
 
   async searchRestaurants(query) {
     return this.getAllRestos()
-      .filter((restaurant) => {
-        const loweredCaseRestaurantTitle = (restaurant.title || '-').toLowerCase();
+      .filter((resto) => {
+        const loweredCaseRestaurantTitle = (resto.title || '-').toLowerCase();
         const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
 
         const loweredCaseQuery = query.toLowerCase();
