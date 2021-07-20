@@ -1,4 +1,4 @@
-import CONFIG from '../../globals/config'
+import CONFIG from '../../globals/config';
 
 const createRestaurantDetailTemplate = (resto) => `
 <h2 tabindex="0" class="restaurant-title">${resto.name} <span>/ ⭐️${resto.rating}</span></h2>
@@ -30,16 +30,16 @@ const createRestaurantDetailTemplate = (resto) => `
 const createRestaurantItemTemplate = (resto) => `
   <div class="resto-card" id="${resto.id}">
     <div class="resto-image" tabIndex="0">
-      <img src="${CONFIG.BASE_IMAGE_URL}small/${resto.pictureId}" alt="${resto.name}">
+      <img src="${CONFIG.BASE_IMAGE_URL}small/${resto.pictureId}" alt="${resto.name || '-'}">
     </div>
 
     <div class="resto-content">
       <a href="${`/#/detail/${resto.id}`}">
-        <p tabindex="0" class="resto-name">${resto.name}</p>
-        <p tabindex="0" class="resto-city">${resto.city}</p>
+        <p tabindex="0" class="resto-name">${resto.name || '-'}</p>
+        <p tabindex="0" class="resto-city">${resto.city || '-'}</p>
         <p tabindex="0" class="resto-description">${
-          resto.description.slice(0, 200) + ' ...'
-        }
+          resto.description
+        || '-'}
         </p>
         <p tabindex="0" class="resto-rating">${
           resto.rating
@@ -61,4 +61,5 @@ const createUnlikeRestaurantButtonTemplate = () => `
   </button>
 `
 
-export { createRestaurantItemTemplate, createRestaurantDetailTemplate, createLikeButtonRestaurantTemplate, createUnlikeRestaurantButtonTemplate }
+export { createRestaurantItemTemplate, createRestaurantDetailTemplate, createLikeButtonRestaurantTemplate, createUnlikeRestaurantButtonTemplate };
+

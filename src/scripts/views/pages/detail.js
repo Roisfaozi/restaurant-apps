@@ -1,8 +1,8 @@
-import FavoriteRestoIdb from '../../data/favoriteRestaurantDb'
-import RestaurantDbSource from '../../data/restourantdb-source'
-import UrlParser from '../../routes/url-parser'
-import LikeButtonPresenter from '../../utils/like-button-presenter'
-import { createRestaurantDetailTemplate } from '../templates/template-creator'
+import FavoriteRestoIdb from '../../data/favoriteRestaurantDb';
+import RestaurantDbSource from '../../data/restourantdb-source';
+import UrlParser from '../../routes/url-parser';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
+import { createRestaurantDetailTemplate } from '../templates/template-creator';
 
 
 const Detail = {
@@ -15,14 +15,14 @@ const Detail = {
 
   async afterRender () {
     const url = UrlParser.parseActiveUrlWithoutCombiner()
-    const resto = await RestaurantDbSource.detailRestaurant(url.id)
+    const restaurant = await RestaurantDbSource.detailRestaurant(url.id)
     const restoContainer = document.querySelector('#resto')
-    restoContainer.innerHTML = createRestaurantDetailTemplate(resto)
+    restoContainer.innerHTML = createRestaurantDetailTemplate(restaurant)
 
     LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       favoriteRestaurants: FavoriteRestoIdb,
-      resto
+      restaurant
     })
   }
 }

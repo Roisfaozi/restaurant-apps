@@ -2,7 +2,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: "PT sans", sans-serif;
+    font-family: 'PT sans', sans-serif;
     box-sizing: border-box;
 }
 html {
@@ -224,8 +224,7 @@ main {
     margin: 20px;
 }
 .resto-content a {
-        text-decoration: none;
-
+    text-decoration: none;
 }
 
 .resto-name {
@@ -288,7 +287,6 @@ main {
 .restaurant .restaurant-desc p span {
     font-weight: bold;
 }
-
 
 .restaurant .restaurant-desc .reviews {
     display: grid;

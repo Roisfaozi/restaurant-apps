@@ -1,5 +1,4 @@
 import FavoriteRestoIdb from '../src/scripts/data/favoriteRestaurantDb';
-import FavoriteRestoSearchPresenter from '../src/scripts/views/pages/liked-restaurants/favorite-resto-search-presenter';
 import FavoriteRestoSearchView from '../src/scripts/views/pages/liked-restaurants/favorite-resto-search-view';
 import FavoriteRestaurantShowPresenter from '../src/scripts/views/pages/liked-restaurants/favorite-resto-show-presenter';
 
@@ -17,19 +16,18 @@ describe('Showing all favorite restaurants', () => {
 
   describe('When no restaurants have been liked', () => {
     it('should ask for the favorite restaurants', () => {
-      const favoriteResto = spyOnAllFunctions(FavoriteRestoIdb);
+      const favoriteRestaurants  = spyOnAllFunctions(FavoriteRestoIdb);
 
-      new FavoriteRestoSearchPresenter({
+      new FavoriteRestaurantShowPresenter({
         view,
-        favoriteResto,
+        favoriteRestaurants,
       });
-      
-      expect(favoriteResto.getAllRestos).toHaveBeenCalledTimes(1);
+      expect(favoriteRestaurants.getAllRestos).toHaveBeenCalledTimes(1);
     });
 
-    fit('should show the information that no restaurants have been liked', (done) => {
+    it('should show the information that no restaurants have been liked', (done) => {
       document.querySelector('.resto-list').addEventListener('resto-list:updated', () => {
-        expect(document.querySelectorAll('.resto-not-found').length)
+        expect(document.querySelectorAll('.resto-list-not-found').length)
           .toEqual(1);
 
         done();
@@ -46,7 +44,7 @@ describe('Showing all favorite restaurants', () => {
 
     describe('When favorite restaurants exist', () => {
       it('should show the restaurants', (done) => {
-        document.querySelector('.resto-list').addEventListener('esto-list:updated', () => {
+        document.querySelector('.resto-list').addEventListener('resto-list:updated', () => {
           expect(document.querySelectorAll('.resto-name').length).toEqual(2);
           done();
         });
