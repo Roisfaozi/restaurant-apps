@@ -7,8 +7,7 @@ class FavoriteRestoSearchPresenter {
   }
 
   _listenToSearchRequestByUser() {
-    this._queryElement = document.getElementById('query');
-     this._view.runWhenUserIsSearching((latestQuery) => {
+    this._view.runWhenUserIsSearching((latestQuery) => {
       this._searchRestaurants (latestQuery);
       
     });

@@ -65,23 +65,6 @@ describe("Searching restaurants", () => {
             searchRestaurants('resto a');
         });
 
-        // ini async error
-        fit('should show the restaurants found by Favorite Restaurants', (done) => {
-            document.querySelector('.resto-list')
-                .addEventListener('.resto-list:updated', () => {
-                    expect(document.querySelectorAll('.resto').length).toEqual(3);
-                    done();
-                });
-
-            favoriteResto.searchRestaurants.withArgs('Kafein a').and.returnValues([
-                { id: 111, name: 'Kafein abc' },
-                { id: 222, name: 'ada juga Kafein abcde' },
-                { id: 333, name: 'ini aja deh Kafein a' },
-            ]);
-
-            searchRestaurants('Kafein a');
-        });
-
         it('should show the name of the restaurants found by Favorite Restaurants', (done) => {
             document.querySelector('.resto-list').addEventListener('resto-list:updated', () => {
                 const restaurantTitles = document.querySelectorAll('.resto-name');
@@ -142,9 +125,9 @@ describe("Searching restaurants", () => {
             searchRestaurants('resto a');
         });
         
-        // async error
+        
         it('should not show any restaurant', (done) => {
-            document.querySelector('.resto-list').addEventListener('resto-lis:updated', () => {
+            document.querySelector('.resto-list').addEventListener('resto-list:updated', () => {
                 expect(document.querySelectorAll('.resto').length).toEqual(0);
                 done();
             });

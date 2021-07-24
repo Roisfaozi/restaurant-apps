@@ -12,6 +12,7 @@ describe('Showing all favorite restaurants', () => {
 
   beforeEach(() => {
     renderTemplate();
+    console.log(renderTemplate())
   });
 
   describe('When no restaurants have been liked', () => {
