@@ -5,11 +5,11 @@ const LikeButtonPresenter = {
   async init ({ likeButtonContainer, favoriteRestaurants, restaurant }) {
     this._likeButtonContainer = likeButtonContainer
     this._resto = restaurant
-    this._favoriteRestaurants = favoriteRestaurants;
-    
+    this._favoriteRestaurants = favoriteRestaurants
+
     await this._renderButton()
   },
-  
+
   async _renderButton () {
     const { id } = this._resto
     if (await this._isRestoExist(id)) {

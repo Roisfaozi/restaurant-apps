@@ -1,8 +1,8 @@
-import { createRestaurantItemTemplate } from '../../templates/template-creator';
+import { createRestaurantItemTemplate } from '../../templates/template-creator'
 
 class FavoriteRestoSearchView {
-    getTempleate() {
-        return`
+  getTempleate () {
+    return `
         <div class="resto-container">
         <h2 class="resto-list-header">Favorite Restuarant</h2>
             <div class="wrapper">
@@ -14,33 +14,33 @@ class FavoriteRestoSearchView {
                 
             </div>
         </div>
-        `;
-    }
+        `
+  }
 
-    runWhenUserIsSearching(callback) {
+  runWhenUserIsSearching (callback) {
     document.getElementById('query').addEventListener('change', (event) => {
-        callback(event.target.value);
-    });
-    }
+      callback(event.target.value)
+    })
+  }
 
-    showRestaurants(restaurants) {
-        this.showFavoriteRestaurants(restaurants)
-    }
+  showRestaurants (restaurants) {
+    this.showFavoriteRestaurants(restaurants)
+  }
 
-    showFavoriteRestaurants(restaurants = []) {
-    let html;
-        if (restaurants.length) {
-            html = restaurants.reduce((carry, resto) => carry.concat(createRestaurantItemTemplate(resto)), '');
-        } else {
-            html = this._getEmptyRestoTemplate();
-        }
-        document.querySelector('.resto-list').innerHTML = html;
-        document.querySelector('.resto-list').dispatchEvent(new Event('resto-list:updated'));
+  showFavoriteRestaurants (restaurants = []) {
+    let html
+    if (restaurants.length) {
+      html = restaurants.reduce((carry, resto) => carry.concat(createRestaurantItemTemplate(resto)), '')
+    } else {
+      html = this._getEmptyRestoTemplate()
     }
+    document.querySelector('.resto-list').innerHTML = html
+    document.querySelector('.resto-list').dispatchEvent(new Event('resto-list:updated'))
+  }
 
-    _getEmptyRestoTemplate() {
-    return '<div class="resto-list-not-found">Tidak ada Restoran untuk ditampilkan</div>';
-    }
+  _getEmptyRestoTemplate () {
+    return '<div class="resto-list-not-found">Tidak ada Restoran untuk ditampilkan</div>'
+  }
 }
 
-export default FavoriteRestoSearchView;
+export default FavoriteRestoSearchView

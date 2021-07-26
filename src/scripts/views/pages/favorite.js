@@ -1,8 +1,8 @@
 
-import FavoriteRestoIdb from '../../data/favoriteRestaurantDb';
-import FavoriteRestoSearchPresenter from './liked-restaurants/favorite-resto-search-presenter';
-import FavoriteRestoSearchView from './liked-restaurants/favorite-resto-search-view';
-import FavoriteRestaurantShowPresenter from './liked-restaurants/favorite-resto-show-presenter';
+import FavoriteRestoIdb from '../../data/favoriteRestaurantDb'
+import FavoriteRestoSearchPresenter from './liked-restaurants/favorite-resto-search-presenter'
+import FavoriteRestoSearchView from './liked-restaurants/favorite-resto-search-view'
+import FavoriteRestaurantShowPresenter from './liked-restaurants/favorite-resto-show-presenter'
 
 const view = new FavoriteRestoSearchView()
 
@@ -12,8 +12,8 @@ const Favorite = {
   },
 
   async afterRender () {
-    new FavoriteRestaurantShowPresenter({view, favoriteRestaurants: FavoriteRestoIdb})
-    new FavoriteRestoSearchPresenter({view, favoriteResto: FavoriteRestoIdb})
+    new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestoIdb })
+    new FavoriteRestoSearchPresenter({ view, favoriteResto: FavoriteRestoIdb })
   }
 
 }

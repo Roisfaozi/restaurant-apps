@@ -1,39 +1,36 @@
 class FavoriteRestoSearchPresenter {
-  constructor({ favoriteResto, view }) {
+  constructor ({ favoriteResto, view }) {
     this._view = view
-    this._listenToSearchRequestByUser();
-    this._favoriteResto = favoriteResto;
-    
+    this._listenToSearchRequestByUser()
+    this._favoriteResto = favoriteResto
   }
 
-  _listenToSearchRequestByUser() {
+  _listenToSearchRequestByUser () {
     this._view.runWhenUserIsSearching((latestQuery) => {
-      this._searchRestaurants (latestQuery);
-      
-    });
+      this._searchRestaurants(latestQuery)
+    })
   }
- 
-  async _searchRestaurants(latestQuery) {
-    this._latestQuery = latestQuery.trim();
 
-    let foundRestaurants;
+  async _searchRestaurants (latestQuery) {
+    this._latestQuery = latestQuery.trim()
+
+    let foundRestaurants
     if (this.latestQuery.length > 0) {
-      foundRestaurants = await this._favoriteResto.searchRestaurants(this.latestQuery);
+      foundRestaurants = await this._favoriteResto.searchRestaurants(this.latestQuery)
     } else {
-      foundRestaurants = await this._favoriteResto.getAllRestos();
+      foundRestaurants = await this._favoriteResto.getAllRestos()
     }
 
-    
-    this._showFoundRestaurants(foundRestaurants);
+    this._showFoundRestaurants(foundRestaurants)
   }
 
-  _showFoundRestaurants(restaurants) {
-    this._view.showFavoriteRestaurants(restaurants);
-}
-  
-  get latestQuery() {
-    return this._latestQuery;
+  _showFoundRestaurants (restaurants) {
+    this._view.showFavoriteRestaurants(restaurants)
+  }
+
+  get latestQuery () {
+    return this._latestQuery
   }
 }
 
-export default FavoriteRestoSearchPresenter;
+export default FavoriteRestoSearchPresenter

@@ -1,53 +1,55 @@
-import { itActsAsFavoriteRestaurantModel } from './contracts/favoriteRestaurantContract';
+/* eslint-disable no-undef */
+import { itActsAsFavoriteRestaurantModel } from './contracts/favoriteRestaurantContract'
 
-let favoriteRestaurants = [];
+let favoriteRestaurants = []
 
 const FavoriteRestaurantArray = {
 
-  getResto(id) {
+  getResto (id) {
     if (!id) {
-      return;
+      return
     }
 
-    return favoriteRestaurants.find((resto) => resto.id === id);
+    return favoriteRestaurants.find((resto) => resto.id === id)
   },
 
-  getAllRestos() {
-    return favoriteRestaurants;
+  getAllRestos () {
+    return favoriteRestaurants
   },
 
-  putResto(resto) {
+  putResto (resto) {
     if (!resto.hasOwnProperty('id')) {
-      return;
+      return
     }
 
     if (this.getResto(resto.id)) {
-      return;
+      return
     }
 
-    favoriteRestaurants.push(resto);
+    favoriteRestaurants.push(resto)
   },
 
-  deleteResto(id) {
-    favoriteRestaurants = favoriteRestaurants.filter((resto) => resto.id !== id);
+  deleteResto (id) {
+    favoriteRestaurants = favoriteRestaurants.filter((resto) => resto.id !== id)
   },
 
-  async searchRestaurants(query) {
+  async searchRestaurants (query) {
     return this.getAllRestos()
       .filter((resto) => {
-        const loweredCaseRestaurantTitle = (resto.title || '-').toLowerCase();
-        const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
+        const loweredCaseRestaurantTitle = (resto.title || '-').toLowerCase()
+        const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '')
 
-        const loweredCaseQuery = query.toLowerCase();
-        const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+        const loweredCaseQuery = query.toLowerCase()
+        const jammedQuery = loweredCaseQuery.replace(/\s/g, '')
 
-        return jammedRestaurantTitle.indexOf(jammedQuery) !== -1;
-      });
-  },
-};
+        return jammedRestaurantTitle.indexOf(jammedQuery) !== -1
+      })
+  }
+}
 
+// eslint-disable-next-line no-undef
 describe('Favorite Restaurant Array Contract Test Implementation', () => {
-  afterEach(() => favoriteRestaurants = []);
+  afterEach(() => favoriteRestaurants = [])
 
-  itActsAsFavoriteRestaurantModel(FavoriteRestaurantArray);
-});
+  itActsAsFavoriteRestaurantModel(FavoriteRestaurantArray)
+})

@@ -1,9 +1,8 @@
-import FavoriteRestoIdb from '../../data/favoriteRestaurantDb';
-import RestaurantDbSource from '../../data/restourantdb-source';
-import UrlParser from '../../routes/url-parser';
-import LikeButtonPresenter from '../../utils/like-button-presenter';
-import { createRestaurantDetailTemplate } from '../templates/template-creator';
-
+import FavoriteRestoIdb from '../../data/favoriteRestaurantDb'
+import RestaurantDbSource from '../../data/restourantdb-source'
+import UrlParser from '../../routes/url-parser'
+import LikeButtonPresenter from '../../utils/like-button-presenter'
+import { createRestaurantDetailTemplate } from '../templates/template-creator'
 
 const Detail = {
   async render () {

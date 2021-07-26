@@ -1,7 +1,7 @@
-import 'lazysizes';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import RestaurantDbSource from '../../data/restourantdb-source';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
+import RestaurantDbSource from '../../data/restourantdb-source'
+import { createRestaurantItemTemplate } from '../templates/template-creator'
 
 const Home = {
   async render () {
@@ -10,7 +10,7 @@ const Home = {
         <div class="hero-container">
                 <picture>
                 <source media="(max-width: 600px)" srcset="./images/hero-image_2-small.jpg">
-                <img class="lazyload" src="./images/hero-image_2-large.jpg" alt="hero image"></img>
+                <img class="lazyload" data-src="./images/hero-image_2-large.jpg" alt="hero image"></img>
             </picture>
                     
         </div>
