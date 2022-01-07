@@ -73,7 +73,6 @@ Scenario('searching restaurants', async ({ I }) => {
 
   const searchQuery = titles[1].substring(1, 3)
   const matchingRestaurants = titles.filter((title) => title.indexOf(searchQuery) !== -1)
-  console.log(searchQuery)
   I.fillField('#query', searchQuery)
   I.pressKey('Enter')
 

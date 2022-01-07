@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Retaurant for launch" />
+    <meta name="author" content="rois faozi" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1c2237" />
+    <link rel="apple-touch-icon" href="/images/favicon/favicon-192x192.png" />
+    <link rel="icon" href="/images/favicon/favicon512x512.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <title>Restaurant Apps Starter Project</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Retaurant for launch">
-        <meta name="author" content="rois faozi">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="manifest" href="manifest.json">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="theme-color" content="#1c2237" />
-        <link rel="apple-touch-icon" href="/images/favicon/favicon-192x192.png">
-        <link rel="icon" href="/images/favicon/favicon512x512.png">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-            crossorigin="anonymous">
-        <title>Restaurant Apps Starter Project</title>
-    </head>
+  <body>
+    <a tabindex="0" href="#resto" class="skip">Menuju ke konten</a>
+    <header class="navbar" id="home">
+      <nav id="drawer" class="navbar-container container">
+        <div class="navbar-logo">
+          <a class="navbar-icon" href="/">Hunger Apps</a>
+        </div>
 
-    <body>
-        <a tabIndex="0" href="#resto" class="skip">Menuju ke konten</a>
-        <header class="navbar" id="home">
+        <button id="hamburger" aria-label="navigation-menu">☰</button>
+        <ul class="nav-menu">
+          <li class="nav-item"><a class="nav-links" href="/">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-links" href="#/favorite">Favorite</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-links"
+              href="https://github.com/Roisfaozi"
+              target="_blank"
+              rel="noopener"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-            <nav id="drawer" class="navbar-container container">
-                <div class="navbar-logo">
-                    <a class="navbar-icon" href="/">Hunger Apps</a>
-                </div>
+    <main id="content"></main>
 
-                <button id="hamburger" aria-label="navigation-menu">☰</button>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a class="nav-links" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-links" href="#/favorite">Favorite</a></li>
-                    <li class="nav-item"><a class="nav-links" href="https://github.com/Roisfaozi" target="_blank"
-                            rel="noopener">About Us</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main id="content">
-
-
-        </main>
-
-        <footer>
-            <div tabIndex="0">
-                <p>Copyright © 2020 - Hunger Apps</p>
-            </div>
-        </footer>
-
-    </body>
-
+    <footer>
+      <div tabindex="0">
+        <p>Copyright © Rois Faozi 2020 - Hunger Apps</p>
+      </div>
+    </footer>
+  </body>
 </html>

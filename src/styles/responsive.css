@@ -105,3 +105,107 @@
     }
 
 }
+
+@media only screen and (max-width: 562px) {
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+    .resto-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 50px;
+        row-gap: 50px;
+    }
+
+    .nav-menu.active {
+        background: #1c2237;
+        left: 0;
+        opacity: 1;
+        transition: all 0.6s ease;
+        z-index: 1;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+        font-size: 16pt;
+    }
+
+    .nav-links:hover {
+        color: #f00946;
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+    }
+
+    .nav-item:hover {
+        border: none;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    #hamburger {
+        margin: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        background-color: transparent;
+        border-style: none;
+        border-color: transparent;
+    }
+
+    /* Hero */
+
+    .btn-info {
+        min-height: 44px;
+        min-width: 44px;
+        font-size: 8pt;
+        margin-top: 20px;
+    }
+
+    /* Main content */
+
+    .resto-list-header {
+        font-size: 6vw;
+        font-weight: bold;
+        color: rgb(26, 26, 43);
+        margin-bottom: 12px;
+    }
+
+    .search {
+    width: 100%;
+    }
+
+    .restaurant {
+    margin: 30px;
+}
+
+.restaurant .restaurant-desc .reviews {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    gap: 16px;
+    margin: 32px 0;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+}
